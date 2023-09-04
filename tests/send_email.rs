@@ -15,11 +15,12 @@ async fn send_email() {
 
     let api_token = env::var("POSTMARK_API_TOKEN").expect("POSTMARK_API_TOKEN is not set");
 
+
     println!("Loaded env variable");
 
     let client = PostmarkClient::builder()
         .base_url("https://api.postmarkapp.com/")
-        .token(api_token)
+        .token("something useless")
         .build();
 
     println!("Created client");
