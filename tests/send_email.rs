@@ -9,9 +9,8 @@ use postmark::reqwest::PostmarkClient;
 use postmark::Query;
 
 #[tokio::test(flavor = "multi_thread")]
-#[ignore]
+//#[ignore]
 async fn send_email() {
-    println!("Started test");
 
     let api_token = env::var("POSTMARK_API_TOKEN").expect("POSTMARK_API_TOKEN is not set");
 
@@ -27,8 +26,8 @@ async fn send_email() {
     let req = SendEmailRequest::builder()
         .from("dan@ourfructus.com")
         .to("customers@ourfructus.com")
-        .body(Body::html("This is a basic e-mail test!".into()))
-        .subject("Test")
+        .body(Body::html("This is a basic e-mail test initiated through the Fructus backend!".into()))
+        .subject("Test on Fructus")
         .build();
 
     println!("Creaed request");
